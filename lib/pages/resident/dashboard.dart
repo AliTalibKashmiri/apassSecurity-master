@@ -1,5 +1,9 @@
+import 'package:apass/pages/resident/bookGroupGuest.dart';
+import 'package:apass/widgets/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+
+import 'bookGuest.dart';
 
 // ignore: camel_case_types
 class dashboard extends StatefulWidget {
@@ -21,7 +25,7 @@ class _dashboardState extends State<dashboard> {
           // both default to 16
           marginRight: 18,
           marginBottom: 20,
-          animatedIcon: AnimatedIcons.menu_close,
+          animatedIcon: AnimatedIcons.add_event,
           animatedIconTheme: IconThemeData(size: 22.0),
           // this is ignored if animatedIcon is non null
           //child: Icon(Icons.add),
@@ -29,34 +33,45 @@ class _dashboardState extends State<dashboard> {
           // If true user is forced to close dial manually
           // by tapping main button and overlay is not rendered.
           closeManually: false,
+
           curve: Curves.bounceIn,
-          overlayColor: Colors.black,
+          overlayColor: Colors.white,
           overlayOpacity: 0.5,
           onOpen: () => print('OPENING DIAL'),
           onClose: () => print('DIAL CLOSED'),
           tooltip: 'Speed Dial',
           heroTag: 'speed-dial-hero-tag',
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
+          backgroundColor: residentbasicColor,
+          foregroundColor: Colors.white,
           elevation: 8.0,
           shape: CircleBorder(),
           children: [
             SpeedDialChild(
-              child: Icon(Icons.person_add),
-              backgroundColor: Colors.blue,
-              label: 'Individual',
+              child: IconButton(
+
+                icon: Icon(Icons.person_add, color: Colors.white,),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => bookGuest()));
+                },
+              ),
+              backgroundColor: residentbasicColor,
+             // label: 'Individual',
               labelStyle: TextStyle(fontSize: 15.0),
-              //onTap: () => print('FIRST CHILD')
-              // onTap: (
-              //     // _incrementCounter
-              // )
+              // onTap: () => print('FIRST CHILD')
+
 
               //tooltip: 'Increment',
             ),
             SpeedDialChild(
-              child: Icon(Icons.group_add_rounded),
-              backgroundColor: Colors.blue,
-              label: 'Group',
+              child: IconButton(
+
+                icon: Icon(Icons.group_add, color: Colors.white,),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => bookGroupGuest()));
+                },
+              ),
+              backgroundColor:residentbasicColor,
+              //label: 'Group',
               labelStyle: TextStyle(fontSize: 15.0),
               //onTap: () => print('SECOND CHILD'),
               // onTap: (

@@ -16,7 +16,7 @@ class _helpState extends State<help> {
     double height = MediaQuery.of(context).size.height;
     return Container(
       child: Scaffold(
-        appBar: myAppBar.getAppBar("Help"),
+        appBar: myAppBar1.getAppBar("Help"),
         body: SafeArea(
           child: Container(
             child: Column(

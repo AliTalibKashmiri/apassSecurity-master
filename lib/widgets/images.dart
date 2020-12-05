@@ -9,7 +9,7 @@ import 'colors.dart';
 final String profileImage = "assets/profile.png";
 
 
-class myAppBar{
+class myAppBar1{
   static  getAppBar(String title)
   {
     return AppBar(
@@ -21,7 +21,7 @@ class myAppBar{
       iconTheme: new IconThemeData(color: Colors.white),
       title: Center(child: Text(title, style: TextStyle( color: Colors.white, ),)),
 
-      backgroundColor: residentbuttonColor,
+      backgroundColor: residentbasicColor,
     );
   }
 }

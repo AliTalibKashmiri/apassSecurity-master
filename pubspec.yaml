@@ -32,6 +32,7 @@ dependencies:
   flutter_speed_dial: any
   flutter_bloc: any
   flutter_spinkit: any
+  flutter_pagewise: any
 
 dev_dependencies:
   flutter_test:
