@@ -3,17 +3,18 @@ import 'package:apass/pages/resident/resetPassword.dart';
 import 'package:apass/widgets/colors.dart';
 import 'package:apass/widgets/images.dart';
 import 'package:apass/widgets/navigation_bar.dart';
+import 'package:apass/widgets/securityTabBar.dart';
 import 'package:apass/widgets/textFormFields.dart';
 import 'package:flutter/material.dart';
 
 
 // ignore: camel_case_types
-class login extends StatefulWidget {
+class SecurityLogin extends StatefulWidget {
   @override
-  _loginState createState() => _loginState();
+  _SecurityLoginState createState() => _SecurityLoginState();
 }
 
-class _loginState extends State<login> {
+class _SecurityLoginState extends State<SecurityLogin> {
   @override
   Widget build(BuildContext context) {
     final bottom = MediaQuery.of(context).viewInsets.bottom;
@@ -107,7 +108,7 @@ class _loginState extends State<login> {
                       //   Navigator.pushNamed(context, "navigationBar");
                       // },
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => navigate()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => securityTabBar()));
                       },
                       child: loginButton()),
                   Align(

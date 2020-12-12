@@ -1,5 +1,6 @@
 
 import 'package:apass/pages/resident/resident_login.dart';
+import 'package:apass/pages/security/SecurityLogin.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -32,7 +33,7 @@ class _welcomeState extends State<welcome> {
                       curve: Curves.bounceOut,
                       type: PageTransitionType.rotate,
                       alignment: Alignment.topCenter,
-                      child: login_screen(),
+                      child: login(),
                     ));
               },
               child: Container(
@@ -93,56 +94,69 @@ class _welcomeState extends State<welcome> {
             SizedBox(height: 20,),
 
 
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 14.0, vertical: 0.0),
-              // height: MediaQuery.of(context).size.height /6,
-              width: MediaQuery.of(context).size.width /2,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 6),
-                child: Column(
-                  children: [
-                    Card(
-                      elevation: 5,
-                      shadowColor: Colors.green,
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                        // side: BorderSide(width: 1,color: Colors.grey[200])
-                      ),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-                            child: Center(
-                              child: Image.asset(
-                                "assets/logo.jpeg",
-                                height: height/10,
-                                // height: MediaQuery.of(context).size.height *
-                                //     0.14,
-                                // width: MediaQuery.of(context).size.width,
-                                fit: BoxFit.cover,
+            GestureDetector(
+              onTap: ()
+              {
+                Navigator.pushReplacement(
+                    context,
+                    PageTransition(
+                      curve: Curves.bounceOut,
+                      type: PageTransitionType.rotate,
+                      alignment: Alignment.topCenter,
+                      child: SecurityLogin(),
+                    ));
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 14.0, vertical: 0.0),
+                // height: MediaQuery.of(context).size.height /6,
+                width: MediaQuery.of(context).size.width /2,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 6),
+                  child: Column(
+                    children: [
+                      Card(
+                        elevation: 5,
+                        shadowColor: Colors.green,
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                          // side: BorderSide(width: 1,color: Colors.grey[200])
+                        ),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                              child: Center(
+                                child: Image.asset(
+                                  "assets/logo.jpeg",
+                                  height: height/10,
+                                  // height: MediaQuery.of(context).size.height *
+                                  //     0.14,
+                                  // width: MediaQuery.of(context).size.width,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10,vertical:2),
-                            child: RichText(
-                              textAlign: TextAlign.center,
-                              text: TextSpan(
-                                  style: TextStyle(fontWeight: FontWeight.w500,color: Color(0xff8492A7),fontSize: 16),
-                                  children: <TextSpan>[
-                                    TextSpan(text: "aPass Security",),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 10,vertical:2),
+                              child: RichText(
+                                textAlign: TextAlign.center,
+                                text: TextSpan(
+                                    style: TextStyle(fontWeight: FontWeight.w500,color: Color(0xff8492A7),fontSize: 16),
+                                    children: <TextSpan>[
+                                      TextSpan(text: "aPass Security",),
 
-                                  ]
+                                    ]
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
 
 
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

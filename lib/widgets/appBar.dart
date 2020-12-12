@@ -4,6 +4,7 @@ import 'package:apass/pages/resident/dependents.dart';
 import 'package:apass/pages/resident/help.dart';
 import 'package:apass/pages/resident/myAcount.dart';
 import 'package:apass/pages/resident/profile.dart';
+import 'package:apass/pages/resident/resident_login.dart';
 import 'package:flutter/material.dart';
 
 import 'colors.dart';
@@ -48,7 +49,13 @@ class _myAppBarState extends State<myAppBar> {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => myAccount()));
                   },
                 ),
-                Icon(Icons.logout)
+                IconButton(
+
+                  icon: Icon(Icons.logout),
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => login ()));
+                  },
+                ),
               ],
             ),
           )

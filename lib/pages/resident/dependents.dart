@@ -14,10 +14,10 @@ class dependents extends StatefulWidget {
 
 class dependentsState extends State<dependents> {
   List<String> name = List<String>.generate(7, (index) {
-    return "ali talib";
+    return "xxxxx";
   });
   List<String> relation = List<String>.generate(7, (index) {
-    return "brother";
+    return "xxxxx";
   });
 
   final nameTextController = TextEditingController(

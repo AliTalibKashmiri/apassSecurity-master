@@ -7,6 +7,7 @@ import 'colors.dart';
 
 //final String background = "Images/background.png";
 final String profileImage = "assets/profile.png";
+final String logo = "assets/logo.jpeg";
 
 
 class myAppBar1{
@@ -18,6 +19,7 @@ class myAppBar1{
       //     icon: Icon(Icons.menu, color: basicColor,)
       //
       // ),
+
       iconTheme: new IconThemeData(color: Colors.white),
       title: Center(child: Text(title, style: TextStyle( color: Colors.white, ),)),
 

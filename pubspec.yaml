@@ -33,6 +33,7 @@ dependencies:
   flutter_bloc: any
   flutter_spinkit: any
   flutter_pagewise: any
+  flappy_search_bar: 1.4.1
 
 dev_dependencies:
   flutter_test:

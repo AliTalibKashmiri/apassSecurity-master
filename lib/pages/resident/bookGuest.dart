@@ -15,6 +15,7 @@ class bookGuest extends StatefulWidget {
 class _bookGuestState extends State<bookGuest> {
   int _radioValue1 = -1;
   bool _switchValue = true;
+  bool _switchValue1 = true;
   void _handleRadioValueChange1(int value) {
     setState(() {
       _radioValue1 = value;
@@ -32,13 +33,13 @@ class _bookGuestState extends State<bookGuest> {
        appBar: myAppBar1.getAppBar("Book Guest"),
       // appBar: myAppBar(),
       body: SafeArea(
-        child: Center(
+        child: SingleChildScrollView(
           child: Container(
 
-            width: width / 1.1,
+            width: width / 1,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.start,
+             // crossAxisAlignment: CrossAxisAlignment.start,
+             // mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(height: height/15,),
                 Row(
@@ -56,35 +57,41 @@ class _bookGuestState extends State<bookGuest> {
                          ),),
                        ),
                      ),
-                     CupertinoSwitch(
-                       value: _switchValue,
+                     Transform.scale(
+                       scale: 0.7,
+                       child: CupertinoSwitch(
+                         value: _switchValue,
 
-                       onChanged: (bool newValue) {
-                         setState(() {
-                           _switchValue = newValue;
-                         });
-                       },
+                         onChanged: (bool newValue) {
+                           setState(() {
+                             _switchValue = newValue;
+                           });
+                         },
+                       ),
                      ),
                    ],),),
-                    Container(
-                      width: width/3,
-                      height: height/25,
-                      child: RaisedButton(
-                        color: residentbasicColor,
-                        child: Text(
-                          "ADD CONTACTS",
-                          style: TextStyle(color: Colors.white, fontSize: height/70),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 15.0),
+                      child: Container(
+                        width: width/3,
+                        height: height/25,
+                        child: RaisedButton(
+                          color: residentbasicColor,
+                          child: Text(
+                            "ADD CONTACTS",
+                            style: TextStyle(color: Colors.white, fontSize: height/70),
+                          ),
+                          onPressed: () {
+                            // setState(() {
+                            //   if (nameTextController.text != "") {
+                            //     name.add(nameTextController.text);
+                            //     relation.add(RelationTextController.text);
+                            //   }
+                            // });
+                            // nameTextController.clear();
+                            // RelationTextController.clear();
+                          },
                         ),
-                        onPressed: () {
-                          // setState(() {
-                          //   if (nameTextController.text != "") {
-                          //     name.add(nameTextController.text);
-                          //     relation.add(RelationTextController.text);
-                          //   }
-                          // });
-                          // nameTextController.clear();
-                          // RelationTextController.clear();
-                        },
                       ),
                     )
                   ],
@@ -109,7 +116,7 @@ class _bookGuestState extends State<bookGuest> {
                    padding: const EdgeInsets.only(left: 20.0),
                    child: Align(
                      alignment: Alignment.centerLeft,
-                     child: Text('Name', style: TextStyle(
+                     child: Text('Phone', style: TextStyle(
                          fontWeight: FontWeight.w300,
                          fontSize: height/60,
                          color: residentbasicColor
@@ -232,7 +239,58 @@ class _bookGuestState extends State<bookGuest> {
                 commentField()
 
 
-               ],),)
+               ],),),
+                SizedBox(height: height/60,),
+                Container(
+                  width: width/1.1,
+                  child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 15.0),
+                      child: Container(
+                        width: width/3.5,
+                        height: height/25,
+                        child: RaisedButton(
+                          color: residentbasicColor,
+                          child: Text(
+                            "SUBMIT",
+                            style: TextStyle(color: Colors.white, fontSize: height/70),
+                          ),
+                          // onPressed: () {
+                          //   displayModalBottomSheet(context);
+                          // },
+                        ),
+                      ),
+                    ),
+                    Container(child: Row(children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text('Guest Confirmation', style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: height/50 ,
+                              color: residentbasicColor
+                          ),),
+                        ),
+                      ),
+                      Transform.scale(
+                        scale: 0.7,
+                        child: CupertinoSwitch(
+                          value: _switchValue1,
+
+                          onChanged: (bool newValue) {
+                            setState(() {
+                              _switchValue1 = newValue;
+                            });
+                          },
+                        ),
+                      ),
+                    ],),),
+
+                  ],
+                ),),
               ],
             ),
           ),

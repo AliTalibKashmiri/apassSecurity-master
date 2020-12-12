@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 
 Widget phoneNoField() {
-  const String phoneNo = "03400888104";
+  const String phoneNo = "xxxxxxxxxxxx";
   return Container(
     child: Padding(
         padding: EdgeInsets.only(
@@ -80,7 +80,7 @@ Widget visitReasonField() {
   );
 }
 Widget nameField() {
-  const String name = "Ali talib";
+  const String name = "xxxxxxxx";
   return Container(
     child: Padding(
         padding: EdgeInsets.only(
@@ -98,6 +98,124 @@ Widget nameField() {
                 decoration: const InputDecoration(
                   border: InputBorder.none,
                   isDense: true,
+                  contentPadding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                ),
+              ),
+            ),
+          ],
+        )),
+  );
+}
+Widget userNamefield() {
+  const String name = "xxxxxxxx";
+  return Container(
+    child: Padding(
+        padding: EdgeInsets.only(
+          left: 25.0,
+          right: 25.0,
+        ),
+        child: new Row(
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            new Flexible(
+              child: new TextFormField(
+                keyboardType: TextInputType.text,
+                cursorColor: Colors.black,
+               // initialValue: name,
+                decoration: const InputDecoration(
+                  hintText: "Enter username ", hintStyle: TextStyle(color: Colors.grey),
+                  border: InputBorder.none,
+                  // //isDense: true,
+                  // contentPadding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                ),
+              ),
+            ),
+          ],
+        )),
+  );
+}
+Widget passwordField() {
+  const String name = "";
+  return Container(
+    child: Padding(
+        padding: EdgeInsets.only(
+          left: 25.0,
+          right: 25.0,
+        ),
+        child: new Row(
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            new Flexible(
+              child: new TextFormField(
+
+                obscureText: true,
+                keyboardType: TextInputType.text,
+                cursorColor: Colors.black,
+               // initialValue: name,
+                decoration: const InputDecoration(
+                  hintText: "Current Password ", hintStyle: TextStyle(color: Colors.grey),
+                  border: InputBorder.none,
+                 // isDense: true,
+                  contentPadding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                ),
+              ),
+            ),
+          ],
+        )),
+  );
+}
+Widget newPasswordField() {
+  const String name = "";
+  return Container(
+    child: Padding(
+        padding: EdgeInsets.only(
+          left: 25.0,
+          right: 25.0,
+        ),
+        child: new Row(
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            new Flexible(
+              child: new TextFormField(
+
+                obscureText: true,
+                keyboardType: TextInputType.text,
+                cursorColor: Colors.black,
+                // initialValue: name,
+                decoration: const InputDecoration(
+                  hintText: "New Password ", hintStyle: TextStyle(color: Colors.grey),
+                  border: InputBorder.none,
+                  // isDense: true,
+                  contentPadding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                ),
+              ),
+            ),
+          ],
+        )),
+  );
+}
+Widget confirmPasswordField() {
+  const String name = "";
+  return Container(
+    child: Padding(
+        padding: EdgeInsets.only(
+          left: 25.0,
+          right: 25.0,
+        ),
+        child: new Row(
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            new Flexible(
+              child: new TextFormField(
+
+                obscureText: true,
+                keyboardType: TextInputType.text,
+                cursorColor: Colors.black,
+                // initialValue: name,
+                decoration: const InputDecoration(
+                  hintText: "Confirm New Password ", hintStyle: TextStyle(color: Colors.grey),
+                  border: InputBorder.none,
+                  // isDense: true,
                   contentPadding: EdgeInsets.fromLTRB(0, 5, 0, 0),
                 ),
               ),
@@ -124,6 +242,9 @@ Widget guestNameField() {
                // initialValue: name,
 
                 decoration:  InputDecoration(
+                  // suffixIcon: IconButton(
+                  //   icon: Icon(Icons.person_add, color: residentbasicColor, size: 10,),
+                  // ),
                     isDense: true,
                    border:UnderlineInputBorder(
                      borderSide: BorderSide(color:residentbasicColor),
@@ -171,6 +292,9 @@ Widget guestPhoneField() {
                 // initialValue: name,
 
                 decoration:  InputDecoration(
+                    // suffixIcon: IconButton(
+                    //   icon: Icon(Icons.phone, color: residentbasicColor,),
+                    // ),
                     isDense: true,
                     border:UnderlineInputBorder(
                       borderSide: BorderSide(color:residentbasicColor),
@@ -390,7 +514,7 @@ Widget commentField() {
 }
 
 Widget emailField() {
-  const String email = "alitalib16867@gmail.com";
+  const String email = "xyz@gmail.com";
   return Container(
     child: Padding(
         padding: EdgeInsets.only(
@@ -417,7 +541,7 @@ Widget emailField() {
   );
 }
 Widget addressField() {
-  const String address = "DHA phase 2 Islamabad";
+  const String address = "xxxxxxxx";
   return Container(
     child: Padding(
         padding: EdgeInsets.only(
@@ -497,6 +621,36 @@ Widget maritalField() {
         )),
   );
 }
+Widget loginButton()
+{
+
+  return Center(
+    child: Container(
+      width: 250,
+      height:40,
+//       decoration: BoxDecoration(
+//       gradient: LinearGradient(colors: [Color(0xff5E2727), Color(0xff810304)],
+// begin: Alignment.centerLeft,
+// end: Alignment.centerRight,
+// ),),
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18.0),
+
+        ),
+
+        padding: const EdgeInsets.all(8.0),
+        disabledColor: residentbasicColor,
+        disabledTextColor: Colors.white,
+        // onPressed: null,
+        child: Text('Login'),
+        // textColor: buttonTextColor,
+      ),
+    ),
+  );
+}
+
+
 
 
 
