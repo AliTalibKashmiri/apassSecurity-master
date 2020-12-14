@@ -27,7 +27,7 @@ class _welcomeState extends State<welcome> {
             GestureDetector(
               onTap: ()
               {
-                Navigator.pushReplacement(
+                Navigator.push(
                     context,
                     PageTransition(
                       curve: Curves.bounceOut,
@@ -46,7 +46,7 @@ class _welcomeState extends State<welcome> {
                     children: [
                       Card(
                         elevation: 5,
-                        shadowColor: Colors.green,
+                        shadowColor:   Color(0xff630055),
                         color: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12.0),
@@ -97,7 +97,7 @@ class _welcomeState extends State<welcome> {
             GestureDetector(
               onTap: ()
               {
-                Navigator.pushReplacement(
+                Navigator.push(
                     context,
                     PageTransition(
                       curve: Curves.bounceOut,
@@ -116,7 +116,7 @@ class _welcomeState extends State<welcome> {
                     children: [
                       Card(
                         elevation: 5,
-                        shadowColor: Colors.green,
+                        shadowColor:  Color(0xff630055),
                         color: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12.0),

@@ -79,6 +79,100 @@ Widget visitReasonField() {
         )),
   );
 }
+Widget resetPasswordPhoneField() {
+  //const String name = "Ali talib";
+  return Container(
+    child: Padding(
+        padding: EdgeInsets.only(
+          left: 25.0,
+          right: 25.0,
+        ),
+        child: new Row(
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            new Flexible(
+              child: new TextFormField(
+                keyboardType: TextInputType.text,
+                cursorColor: Colors.black,
+                // initialValue: name,
+
+                decoration:  InputDecoration(
+                    isDense: true,
+                    border:UnderlineInputBorder(
+                      borderSide: BorderSide(color:residentbasicColor),
+                      // borderRadius: BorderRadius.circular(30),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: residentbasicColor)
+                    ),
+                    enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: residentbasicColor)
+                    ),
+                    errorBorder: InputBorder.none,
+                    disabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: residentbasicColor)
+                    ),
+                    contentPadding:
+                    const EdgeInsets.only(left: 0,bottom:0),
+
+                    filled: true,
+                    hintStyle: new TextStyle(color:residentbasicColor, fontWeight: FontWeight.w300, fontSize: 15),
+                    hintText: "Phone",
+                    fillColor: Colors.white70
+                ),
+              ),
+            ),
+          ],
+        )),
+  );
+}
+Widget resetPasswordEstateField() {
+
+  return Container(
+    child: Padding(
+        padding: EdgeInsets.only(
+          left: 25.0,
+          right: 25.0,
+        ),
+        child: new Row(
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            new Flexible(
+              child: new TextFormField(
+                keyboardType: TextInputType.text,
+                cursorColor: Colors.black,
+                // initialValue: name,
+
+                decoration:  InputDecoration(
+                    isDense: true,
+                    border:UnderlineInputBorder(
+                      borderSide: BorderSide(color:residentbasicColor),
+                      // borderRadius: BorderRadius.circular(30),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: residentbasicColor)
+                    ),
+                    enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: residentbasicColor)
+                    ),
+                    errorBorder: InputBorder.none,
+                    disabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: residentbasicColor)
+                    ),
+                    contentPadding:
+                    const EdgeInsets.only(left: 0,bottom:0),
+
+                    filled: true,
+                    hintStyle: new TextStyle(color:residentbasicColor, fontWeight: FontWeight.w300, fontSize: 15),
+                    hintText: "Estate Name",
+                    fillColor: Colors.white70
+                ),
+              ),
+            ),
+          ],
+        )),
+  );
+}
 Widget nameField() {
   const String name = "xxxxxxxx";
   return Container(
@@ -644,6 +738,34 @@ Widget loginButton()
         disabledTextColor: Colors.white,
         // onPressed: null,
         child: Text('Login'),
+        // textColor: buttonTextColor,
+      ),
+    ),
+  );
+}
+Widget passwordResetButton()
+{
+
+  return Center(
+    child: Container(
+      width: 250,
+      height:40,
+//       decoration: BoxDecoration(
+//       gradient: LinearGradient(colors: [Color(0xff5E2727), Color(0xff810304)],
+// begin: Alignment.centerLeft,
+// end: Alignment.centerRight,
+// ),),
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18.0),
+
+        ),
+
+        padding: const EdgeInsets.all(8.0),
+        disabledColor: residentbasicColor,
+        disabledTextColor: Colors.white,
+        // onPressed: null,
+        child: Text('Reset'),
         // textColor: buttonTextColor,
       ),
     ),

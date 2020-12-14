@@ -1,5 +1,6 @@
 import 'package:apass/pages/resident/dashboard.dart';
 import 'package:apass/pages/resident/resetPassword.dart';
+
 import 'package:apass/widgets/colors.dart';
 import 'package:apass/widgets/images.dart';
 import 'package:apass/widgets/navigation_bar.dart';
@@ -111,24 +112,7 @@ class _SecurityLoginState extends State<SecurityLogin> {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => securityTabBar()));
                       },
                       child: loginButton()),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 8.0, right: 10.0),
-                      child: GestureDetector(
-                        // onTap: () {
-                        //   Navigator.push(context, MaterialPageRoute(builder: (context) => resetPassword()));
-                        // },
-                        child: Text(
-                          'Forgot Password?',
-                          style: TextStyle(
-                              color: residentbasicColor,
-                              fontSize: height / 50,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ),
-                    ),
-                  ),
+
                   SizedBox(
                     height: height / 20,
                   ), //

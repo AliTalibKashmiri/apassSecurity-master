@@ -36,7 +36,7 @@ class _splashState extends State<splash> {
         Padding(
             padding: EdgeInsets.all(15.0),
             child: new SpinKitPouringHourglass(
-              color: Color(0xff3F924E),
+              color: Color(0xff630055),
               size: 42,
             )
         ),

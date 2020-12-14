@@ -14,18 +14,36 @@ class searchResidentDependents extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: residentbasicColor,
-           
-            bottom: TabBar(tabs: [
-              Tab(
-                text: 'Residents',
-              ),
-              Tab(text: 'Dependents'),
+         //  appBar: AppBar(
+         //    backgroundColor: residentbasicColor,
+         // title: Text('search'),
+         //    bottom: TabBar(
+         //        indicatorColor: Colors.white,
+         //        tabs: [
+         //
+         //      Tab(
+         //        text: 'Residents',
+         //      ),
+         //      Tab(text: 'Dependents'),
+         //
+         //    ]),
+         //  ),
+          bottomNavigationBar: Material(
+            color: residentbasicColor,
+            child: TabBar(
 
-            ]),
+              labelColor: Colors.white,
+                indicatorColor: residentbasicColor,
+                tabs: [
+                  Tab(
+                    text: 'Residents',
+                  ),
+                  Tab(text: 'Dependents'),
+
+                ]),
           ),
           body: TabBarView(
+
             children: [
               searchResident(),
               searchDependents()

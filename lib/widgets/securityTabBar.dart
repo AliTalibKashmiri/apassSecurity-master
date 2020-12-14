@@ -52,8 +52,13 @@ class securityTabBar extends StatelessWidget {
                 )
               ],
             ),
-            bottom: TabBar(tabs: [
+            bottom: TabBar(
+                indicatorColor: Colors.white,
+                labelStyle: TextStyle( color: Colors.white),
+                labelColor: Colors.white,
+                tabs: [
               Tab(
+
                 text: 'Dashboard',
                 icon: Icon(Icons.home_outlined),
               ),
@@ -61,16 +66,21 @@ class securityTabBar extends StatelessWidget {
                 text: 'History',
                 icon: Icon(Icons.refresh),
               ),
-              IconButton(
-                icon: Icon(Icons.search),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => searchResidentDependents()));
-                },
-              ),
+
+              // IconButton(
+              //   icon: Icon(Icons.search),
+              //   onPressed: () {
+              //     Navigator.push(
+              //         context,
+              //         MaterialPageRoute(
+              //             builder: (context) => searchResidentDependents()));
+              //   },
+              // ),
               Tab(
+                text: 'Search',
+                icon: Icon(Icons.search),
+              ),
+                  Tab(
                 text: 'Capture',
                 icon: Icon(Icons.camera_alt_outlined),
               ),
@@ -89,81 +99,87 @@ class securityTabBar extends StatelessWidget {
 }
 void managePassword(context) {
   showModalBottomSheet(
+    enableDrag: false,
+      isScrollControlled: true,
       context: context,
       builder: (BuildContext bc) {
-        return Container(
-            height: 300,
-            color: Colors.white,
-            child: Form(
-              child: Column(children: [
-                SizedBox(height:30),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20.0),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text('Manage Password', style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 20,
-                        color: residentbasicColor
-                    ),),
+        return Padding(
+            padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).viewInsets.bottom),
+          child: Container(
+              height: 300,
+              color: Colors.white,
+              child: Form(
+                child: Column(children: [
+                  SizedBox(height:30),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20.0),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text('Manage Password', style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 20,
+                          color: residentbasicColor
+                      ),),
+                    ),
                   ),
-                ),
-                //guestNameField(),
-                SizedBox(height:20),
-               passwordField(),
-               newPasswordField(),
-                confirmPasswordField(),
-               // guestPhoneField(),
-                SizedBox(height:20),
+                  //guestNameField(),
+                  SizedBox(height:20),
+                 passwordField(),
+                 newPasswordField(),
+                  confirmPasswordField(),
+                 // guestPhoneField(),
+                  SizedBox(height:20),
 
 
 
 
-                Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        width: 80,
-                        height: 25,
-                        child: RaisedButton(
-                          color: residentbasicColor,
-                          child: Text(
-                            "Save",
-                            style: TextStyle(color: Colors.white, fontSize: 15),
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          width: 80,
+                          height: 25,
+                          child: RaisedButton(
+                            color: residentbasicColor,
+                            child: Text(
+                              "Save",
+                              style: TextStyle(color: Colors.white, fontSize: 15),
+                            ),
+                            onPressed: () {
+                              // setState(() {
+                              //   if (nameTextController.text != "") {
+                              //     name.add(nameTextController.text);
+                              //     relation.add(RelationTextController.text);
+                              //   }
+                              // });
+                              // nameTextController.clear();
+                              // RelationTextController.clear();
+                            },
                           ),
-                          onPressed: () {
-                            // setState(() {
-                            //   if (nameTextController.text != "") {
-                            //     name.add(nameTextController.text);
-                            //     relation.add(RelationTextController.text);
-                            //   }
-                            // });
-                            // nameTextController.clear();
-                            // RelationTextController.clear();
-                          },
                         ),
-                      ),
-                      Container(
-                        width: 80,
-                        height: 25,
-                        child: RaisedButton(
-                          color: residentbasicColor,
-                          child: Text(
-                            "CLOSE",
-                            style: TextStyle(color: Colors.white, fontSize: 15),
+                        Container(
+                          width: 80,
+                          height: 25,
+                          child: RaisedButton(
+                            color: residentbasicColor,
+                            child: Text(
+                              "CLOSE",
+                              style: TextStyle(color: Colors.white, fontSize: 15),
+                            ),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
                           ),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
                         ),
-                      ),
-                    ],
-                  ),
-                )
-              ],),
-            )
+                      ],
+                    ),
+                  )
+                ],),
+              )
+          ),
         );
       });
 }

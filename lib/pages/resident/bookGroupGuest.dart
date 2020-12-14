@@ -85,142 +85,147 @@ class _bookGroupGuestState extends State<bookGroupGuest> {
         ),
       ),
     );
-
   }
   void displayModalBottomSheet(context) {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext bc) {
-          return Container(
-            height: 300,
-            color: Colors.white,
-              child: Form(
-                child: Column(children: [
-                  SizedBox(height:30),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text('Name', style: TextStyle(
-                          fontWeight: FontWeight.w300,
-                          fontSize: 15,
-                          color: residentbasicColor
-                      ),),
-                    ),
-                  ),
-                  guestNameField(),
-                  SizedBox(height:20),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text('Phone', style: TextStyle(
-                          fontWeight: FontWeight.w300,
-                          fontSize:15,
-                          color: residentbasicColor
-                      ),),
-                    ),
-                  ),
-                  guestPhoneField(),
-                  SizedBox(height:20),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text('Guest Contacts Visible To Security Guards', style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 15,
-                          color: residentbasicColor
-                      ),),
-                    ),
-                  ),
-                  SizedBox(height:20),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text('Gender', style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12,
-                          color: residentbasicColor
-                      ),),
-                    ),
-                  ),
-
-                  new Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      new Radio(
-                        value: 0,
-                        groupValue: _radioValue1,
-                        activeColor: residentbasicColor,
-                        onChanged: _handleRadioValueChange1,
+          return Padding(
+            padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).viewInsets.bottom),
+            child: SingleChildScrollView(
+              child: Container(
+                height: 300,
+                color: Colors.white,
+                  child: Form(
+                    child: Column(children: [
+                      SizedBox(height:30),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text('Name', style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 15,
+                              color: residentbasicColor
+                          ),),
+                        ),
                       ),
-                      new Text(
-                        'Male',
-                        style: new TextStyle(fontSize: 16.0, color: residentbasicColor),
+                      guestNameField(),
+                      SizedBox(height:20),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text('Phone', style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize:15,
+                              color: residentbasicColor
+                          ),),
+                        ),
                       ),
-                      new Radio(
-                        value: 1,
-                        activeColor: residentbasicColor,
-                        groupValue: _radioValue1,
-                        onChanged: _handleRadioValueChange1,
+                      guestPhoneField(),
+                      SizedBox(height:20),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text('Guest Contacts Visible To Security Guards', style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 15,
+                              color: residentbasicColor
+                          ),),
+                        ),
                       ),
-                      new Text(
-                        'Female',
-                        style: new TextStyle(
-                            fontSize: 16.0,
-                            color: residentbasicColor
+                      SizedBox(height:20),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text('Gender', style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
+                              color: residentbasicColor
+                          ),),
                         ),
                       ),
 
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                       children: [
-                         Container(
-                           width: 80,
-                           height: 25,
-                           child: RaisedButton(
-                             color: residentbasicColor,
-                             child: Text(
-                               "ADD",
-                               style: TextStyle(color: Colors.white, fontSize: 15),
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          new Radio(
+                            value: 0,
+                            groupValue: _radioValue1,
+                            activeColor: residentbasicColor,
+                            onChanged: _handleRadioValueChange1,
+                          ),
+                          new Text(
+                            'Male',
+                            style: new TextStyle(fontSize: 16.0, color: residentbasicColor),
+                          ),
+                          new Radio(
+                            value: 1,
+                            activeColor: residentbasicColor,
+                            groupValue: _radioValue1,
+                            onChanged: _handleRadioValueChange1,
+                          ),
+                          new Text(
+                            'Female',
+                            style: new TextStyle(
+                                fontSize: 16.0,
+                                color: residentbasicColor
+                            ),
+                          ),
+
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                           children: [
+                             Container(
+                               width: 80,
+                               height: 25,
+                               child: RaisedButton(
+                                 color: residentbasicColor,
+                                 child: Text(
+                                   "ADD",
+                                   style: TextStyle(color: Colors.white, fontSize: 15),
+                                 ),
+                                 onPressed: () {
+                                   // setState(() {
+                                   //   if (nameTextController.text != "") {
+                                   //     name.add(nameTextController.text);
+                                   //     relation.add(RelationTextController.text);
+                                   //   }
+                                   // });
+                                   // nameTextController.clear();
+                                   // RelationTextController.clear();
+                                 },
+                               ),
                              ),
-                             onPressed: () {
-                               // setState(() {
-                               //   if (nameTextController.text != "") {
-                               //     name.add(nameTextController.text);
-                               //     relation.add(RelationTextController.text);
-                               //   }
-                               // });
-                               // nameTextController.clear();
-                               // RelationTextController.clear();
-                             },
-                           ),
-                         ),
-                         Container(
-                           width: 80,
-                           height: 25,
-                           child: RaisedButton(
-                             color: residentbasicColor,
-                             child: Text(
-                               "CLOSE",
-                               style: TextStyle(color: Colors.white, fontSize: 15),
+                             Container(
+                               width: 80,
+                               height: 25,
+                               child: RaisedButton(
+                                 color: residentbasicColor,
+                                 child: Text(
+                                   "CLOSE",
+                                   style: TextStyle(color: Colors.white, fontSize: 15),
+                                 ),
+                                 onPressed: () {
+                                   Navigator.pop(context);
+                                 },
+                               ),
                              ),
-                             onPressed: () {
-                               Navigator.pop(context);
-                             },
-                           ),
-                         ),
-                       ],
-                    ),
+                           ],
+                        ),
+                      )
+                    ],),
                   )
-                ],),
-              )
+              ),
+            ),
           );
         });
   }

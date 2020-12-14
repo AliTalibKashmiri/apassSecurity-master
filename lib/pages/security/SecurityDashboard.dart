@@ -1,5 +1,6 @@
 import 'package:apass/widgets/Lists.dart';
 import 'package:apass/widgets/colors.dart';
+import 'package:apass/widgets/rawButtons.dart';
 import 'package:flutter/material.dart';
 
 class SecurityDashboard extends StatefulWidget {
@@ -9,104 +10,208 @@ class SecurityDashboard extends StatefulWidget {
 
 class _SecurityDashboardState extends State<SecurityDashboard> {
 
-  int _index = 0;
+
+
+  int _selectedIndex = 0;
   bool checkInState = false;
+
+   int _selectedTab = 0;
+   final _pageOptions = [
+     GeneralData(),
+     Booking(),
+     CheckIn(),
+     LeavingList(),
+
+   ];
+
+   int allCounter = AllData.length;
+   int bookedCounter = bookedData.length;
+   int checkInCounter = checkIn.length;
+   int leavingCounter = leavingData.length;
 
 
   @override
   Widget build(BuildContext context) {
-    Widget child;
-    switch (_index) {
-      case 0:
-        // child = FlutterLogo();
-
-      setState(() {
-        checkInState == false
-            ? checkInState = true
-            : checkInState = false;
-      });
-
-
-        break;
-      case 1:
-        // child = FlutterLogo(colors: Colors.orange);
-        break;
-      case 2:
-        // child = FlutterLogo(colors: Colors.red);
-        break;
-    }
 
 
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    final items = List<String>.generate(15, (i) => "Item $i");
+
+
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+
         backgroundColor: residentbasicColor,
-        onTap: (newIndex) => setState(() => _index = newIndex),
+        showSelectedLabels: true,
+        showUnselectedLabels: false,
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _selectedTab,
+        selectedItemColor:  Colors.white,
 
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
+        onTap: (int index) {
+          setState(() {
+            _selectedTab = index;
+          });
+        },
+
+        unselectedItemColor: Colors.black,
         // fixedColor: residentbasicColor,
-
-        currentIndex: 1, // this will be set when a new tab is tapped
+        // this will be set when a new tab is tapped
         items: [
           BottomNavigationBarItem(
-            icon: new Icon(Icons.home, color: Colors.grey,),
-            title: new Text('Check In', style: TextStyle(color: Colors.white),),
+            icon: Stack(
+              children: <Widget>[
+                new Icon(Icons.home,color: Colors.white,size: 30,),
+                new Positioned(
+                  right: 0,
+                  child: new Container(
+                    padding: EdgeInsets.all(2),
+                    decoration: new BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    constraints: BoxConstraints(
+                      minWidth: 12,
+                      minHeight: 12,
+                    ),
+                    child: new Text( "$allCounter" ,
+                      style: new TextStyle(
+                        color: Colors.white,
+                        fontSize: 8,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                )
+              ],
+            ),
+            title: new Text('',),
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.library_add_check_outlined, color: Colors.grey,),
-            title: new Text('Booked'),
+            icon: Stack(
+              children: <Widget>[
+                new Icon(Icons.calendar_today_rounded,color: Colors.white,size: 28,),
+                new Positioned(
+                  right: 0,
+                  child: new Container(
+                    padding: EdgeInsets.all(2),
+                    decoration: new BoxDecoration(
+                      color: bookedColor,
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    constraints: BoxConstraints(
+                      minWidth: 12,
+                      minHeight: 12,
+                    ),
+                    child: new Text( "$bookedCounter" ,
+                      style: new TextStyle(
+                        color: Colors.white,
+                        fontSize: 8,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                )
+              ],
+            ),
+            title: new Text(''),
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.done_all, color: Colors.grey,),
-
-              title: Text('Profile')
+              icon: Stack(
+                children: <Widget>[
+                  new Icon(Icons.done_all,color: Colors.white,size: 28,),
+                  new Positioned(
+                    right: 0,
+                    child: new Container(
+                      padding: EdgeInsets.all(2),
+                      decoration: new BoxDecoration(
+                        color: checkInColor,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      constraints: BoxConstraints(
+                        minWidth: 12,
+                        minHeight: 12,
+                      ),
+                      child: new Text( "$checkInCounter" ,
+                        style: new TextStyle(
+                          color: Colors.white,
+                          fontSize: 8,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              title: Text('')
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.emoji_people_sharp, color: Colors.grey,),
-              title: Text('Leaving')
+              icon: Stack(
+                children: <Widget>[
+                  new Icon(Icons.directions_walk,color: Colors.white,size: 28,),
+                  new Positioned(
+                    right: 0,
+                    child: new Container(
+                      padding: EdgeInsets.all(2),
+                      decoration: new BoxDecoration(
+                        color: leavingColor,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      constraints: BoxConstraints(
+                        minWidth: 12,
+                        minHeight: 12,
+                      ),
+                      child: new Text( "$leavingCounter" ,
+                        style: new TextStyle(
+                          color: Colors.white,
+                          fontSize: 8,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              title: Text('')
           ),
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.arrow_forward, color: Colors.white,),
-          //   title: new Text('Messages'),
-          // )
-          // BottomNavigationBarItem(
-          //     icon: Icon(Icons.directions_walk, color: Colors.white,),
-          //     title: Text('Profile')
-          // ),
-
+          //
         ],
 
       ),
-      body: GridView.count(
-
-        crossAxisCount: 5,
-        crossAxisSpacing: 12,
-        mainAxisSpacing: 12,
-
-
-        children:List.generate(
-          checkInState == false
-            ? checkIn.length
-              : leavingData.length
-
-
-            , (index) {
-    return RawMaterialButton(
-      onPressed: () {},
-      elevation: 2.0,
-      fillColor: leavingData[index].color,
-      child: Text(leavingData[index].number.toString(),
-      style: TextStyle(color: Colors.white,
-      fontWeight: FontWeight.w500),),
-      padding: EdgeInsets.all(15.0),
-      shape: CircleBorder(),
-    );
-        })
-
+      body:
+      Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: _pageOptions[_selectedTab],
       ),
+
+
+    //   GridView.count(
+    //
+    //     crossAxisCount: 5,
+    //     crossAxisSpacing: 12,
+    //     mainAxisSpacing: 12,
+    //
+    //
+    //     children:List.generate(
+    //       checkInState == false
+    //         ? checkIn.length
+    //           : leavingData.length
+    //
+    //
+    //         , (index) {
+    // return RawMaterialButton(
+    //   onPressed: () {},
+    //   elevation: 2.0,
+    //   fillColor: leavingData[index].color,
+    //   child: Text(leavingData[index].number.toString(),
+    //   style: TextStyle(color: Colors.white,
+    //   fontWeight: FontWeight.w500),),
+    //   padding: EdgeInsets.all(15.0),
+    //   shape: CircleBorder(),
+    // );
+    //     })
+    //
+    //   ),
     );
   }
 }

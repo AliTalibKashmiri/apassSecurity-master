@@ -15,7 +15,9 @@ class myAccount extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: residentbasicColor,
             title: Text('My Account'),
-            bottom: TabBar(tabs: [
+            bottom: TabBar(
+                indicatorColor: Colors.white,
+                tabs: [
               Tab(
                 text: 'PROFILE',
               ),

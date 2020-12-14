@@ -115,9 +115,9 @@ class _loginState extends State<login> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 8.0, right: 10.0),
                       child: GestureDetector(
-                        // onTap: () {
-                        //   Navigator.push(context, MaterialPageRoute(builder: (context) => resetPassword()));
-                        // },
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => resetPassword()));
+                        },
                         child: Text(
                           'Forgot Password?',
                           style: TextStyle(

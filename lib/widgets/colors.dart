@@ -10,6 +10,7 @@ final Color basicColor = Color(0xff757575);
 
 final Color checkInColor = Color.fromRGBO(56,142,60, 1);
 
-final Color leavingColor = Colors.lightGreenAccent[400];
+final Color leavingColor = Color(0xffd4d14c);
+final Color bookedColor = Color(0xff3dc5e0);
 final Color circlecolor2 = Colors.orange;
 final Color circlecolor3 = Colors.black;

@@ -112,6 +112,18 @@ mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         Row(
                          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
+                            Container(
+                              height: height / 40,
+                              width: width/20,
+                              child:RawMaterialButton(
+
+                                onPressed: () {},
+                                elevation: 5.0,
+                                fillColor: bookedColor,
+                                shape: CircleBorder(),
+                              ),
+                            ),
+                            SizedBox(width: width/50,),
                           Text(
                             'Booked ',
                             style: TextStyle(
@@ -130,6 +142,18 @@ mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         Row(
                           // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
+                            Container(
+                              height: height / 40,
+                              width: width/20,
+                              child:RawMaterialButton(
+
+                                onPressed: () {},
+                                elevation: 5.0,
+                                fillColor: checkInColor,
+                                shape: CircleBorder(),
+                              ),
+                            ),
+                            SizedBox(width: width/50,),
                             Text(
                               'In ',
                               style: TextStyle(
@@ -146,6 +170,18 @@ mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             ),
                           ],),
                         Row(children: [
+                          Container(
+                            height: height / 40,
+                            width: width/20,
+                            child:RawMaterialButton(
+
+                              onPressed: () {},
+                              elevation: 5.0,
+                              fillColor: leavingColor,
+                              shape: CircleBorder(),
+                            ),
+                          ),
+                          SizedBox(width: width/50,),
                           Text(
                             'Leaving ',
                             style: TextStyle(
@@ -162,6 +198,18 @@ mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           ),
                         ],),
                         Row(children: [
+                          Container(
+                            height: height / 40,
+                            width: width/20,
+                            child:RawMaterialButton(
+
+                              onPressed: () {},
+                              elevation: 5.0,
+                              fillColor: bookedColor,
+                              shape: CircleBorder(),
+                            ),
+                          ),
+                          SizedBox(width: width/50,),
                           Text(
                             'Out ',
                             style: TextStyle(

@@ -53,7 +53,7 @@ class NavigationBar extends State<navigate> {
 
         body: _pageOptions[_selectedTab],
         bottomNavigationBar: BottomNavigationBar(
-backgroundColor: residentbasicColor,
+          backgroundColor: residentbasicColor,
           showSelectedLabels: true,
           showUnselectedLabels: false,
           type: BottomNavigationBarType.fixed,
