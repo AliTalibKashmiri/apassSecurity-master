@@ -27,8 +27,7 @@ class NavigationBar extends State<securityNavigation> {
   final _pageOptions = [
 
   dashboard(),
-  history(),
-    notification(),
+  history(), notification(),
 
 
 

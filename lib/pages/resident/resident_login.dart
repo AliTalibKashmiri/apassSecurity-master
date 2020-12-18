@@ -42,7 +42,7 @@ class _loginState extends State<login> {
                     height: height / 4,
                     width: width / 3,
                     child: Image.asset(
-                      logo,
+                      resident,
                       height: height / 4,
                     ),
                   ),

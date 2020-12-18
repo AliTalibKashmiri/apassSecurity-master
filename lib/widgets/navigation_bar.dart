@@ -1,6 +1,8 @@
 
 
+import 'package:apass/pages/resident/apppage.dart';
 import 'package:apass/pages/resident/dashboard.dart';
+import 'package:apass/pages/resident/duesAndSubcription.dart';
 import 'package:apass/pages/resident/history.dart';
 import 'package:apass/pages/resident/notification.dart';
 import 'package:apass/widgets/appBar.dart';
@@ -29,6 +31,8 @@ class NavigationBar extends State<navigate> {
   dashboard(),
   history(),
     notification(),
+    AppPage(),
+   speedDial(),
 
 
 
@@ -79,6 +83,16 @@ class NavigationBar extends State<navigate> {
               icon: Icon(Icons.email,size: 22,  color:Colors.white,),
               //icon: Image.asset('assets/order.png',scale: 1.2,),
               title: Text('Notifications',style: TextStyle(fontSize: height/70,  color:Colors.white,),),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.chat,size: 22,  color:Colors.white,),
+              //icon: Image.asset('assets/order.png',scale: 1.2,),
+              title: Text('Messages',style: TextStyle(fontSize: height/70,  color:Colors.white,),),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_balance_wallet,size: 22,  color:Colors.white,),
+              //icon: Image.asset('assets/order.png',scale: 1.2,),
+              title: Text('Subscriptions',style: TextStyle(fontSize: height/70,  color:Colors.white,),),
             ),
 
 

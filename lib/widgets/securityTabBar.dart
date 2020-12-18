@@ -1,4 +1,5 @@
 
+import 'package:apass/pages/resident/apppage.dart';
 import 'package:apass/widgets/colors.dart';
 
 import 'package:apass/widgets/textFormFields.dart';
@@ -18,7 +19,7 @@ class securityTabBar extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return DefaultTabController(
-      length: 4,
+      length: 5,
       child: Scaffold(
           appBar: AppBar(
             backgroundColor: residentbasicColor,
@@ -53,6 +54,7 @@ class securityTabBar extends StatelessWidget {
               ],
             ),
             bottom: TabBar(
+                isScrollable: true,
                 indicatorColor: Colors.white,
                 labelStyle: TextStyle( color: Colors.white),
                 labelColor: Colors.white,
@@ -60,11 +62,11 @@ class securityTabBar extends StatelessWidget {
               Tab(
 
                 text: 'Dashboard',
-                icon: Icon(Icons.home_outlined),
+                icon: Icon(Icons.home_outlined, size: height/40,),
               ),
               Tab(
                 text: 'History',
-                icon: Icon(Icons.refresh),
+                icon: Icon(Icons.refresh, size: height/40,),
               ),
 
               // IconButton(
@@ -78,12 +80,16 @@ class securityTabBar extends StatelessWidget {
               // ),
               Tab(
                 text: 'Search',
-                icon: Icon(Icons.search),
+                icon: Icon(Icons.search, size: height/40,),
               ),
                   Tab(
                 text: 'Capture',
-                icon: Icon(Icons.camera_alt_outlined),
+                icon: Icon(Icons.camera_alt_outlined, size: height/40,),
               ),
+                  Tab(
+                    text: 'Messages',
+                    icon: Icon(Icons.chat, size: height/40,),
+                  ),
             ]),
           ),
           body: TabBarView(
@@ -92,6 +98,7 @@ class securityTabBar extends StatelessWidget {
               securityHistory(),
               searchResidentDependents(),
               capture(),
+              AppPage(),
             ],
           )),
     );

@@ -8,6 +8,11 @@ import 'colors.dart';
 //final String background = "Images/background.png";
 final String profileImage = "assets/profile.png";
 final String logo = "assets/logo.jpeg";
+final String visaCard = "assets/visaCard.png";
+final String maestroCard = "assets/maestroCard.png";
+final String resident = "assets/resident.jpeg";
+
+
 
 
 class myAppBar1{

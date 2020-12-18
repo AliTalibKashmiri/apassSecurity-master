@@ -29,14 +29,14 @@ class _splashState extends State<splash> {
       children: <Widget>[
 
 
-        Image.asset('assets/logo.jpeg',
+        Image.asset('assets/resident.jpeg',
           height: height/6,),
         SizedBox(height: height/20,),
 
         Padding(
             padding: EdgeInsets.all(15.0),
             child: new SpinKitPouringHourglass(
-              color: Color(0xff630055),
+              color: Color(0xff377d29),
               size: 42,
             )
         ),

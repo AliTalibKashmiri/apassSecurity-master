@@ -46,7 +46,7 @@ class _welcomeState extends State<welcome> {
                     children: [
                       Card(
                         elevation: 5,
-                        shadowColor:   Color(0xff630055),
+                        shadowColor:   Color(0xff377d29),
                         color: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12.0),
@@ -58,7 +58,7 @@ class _welcomeState extends State<welcome> {
                               padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
                               child: Center(
                                 child: Image.asset(
-                                  "assets/logo.jpeg",
+                                  "assets/resident.jpeg",
                                   height: height/10,
                                   // height: MediaQuery.of(context).size.height *
                                   //     0.14,

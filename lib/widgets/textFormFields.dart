@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 import 'colors.dart';
 
@@ -743,6 +744,34 @@ Widget loginButton()
     ),
   );
 }
+Widget duesPayButton()
+{
+
+  return Center(
+    child: Container(
+      width: 250,
+      height:40,
+//       decoration: BoxDecoration(
+//       gradient: LinearGradient(colors: [Color(0xff5E2727), Color(0xff810304)],
+// begin: Alignment.centerLeft,
+// end: Alignment.centerRight,
+// ),),
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18.0),
+
+        ),
+
+        padding: const EdgeInsets.all(8.0),
+        disabledColor: residentbasicColor,
+        disabledTextColor: Colors.white,
+        // onPressed: null,
+        child: Text('Pay Now'),
+        // textColor: buttonTextColor,
+      ),
+    ),
+  );
+}
 Widget passwordResetButton()
 {
 
@@ -771,6 +800,7 @@ Widget passwordResetButton()
     ),
   );
 }
+
 
 
 
